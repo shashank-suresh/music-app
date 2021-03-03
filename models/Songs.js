@@ -6,20 +6,17 @@ const SongsSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    album:{
-        type: String,
-        required: true
-    },
     artist:{
         type: String,
         required: true
     },
     image_url:{
-        type: String
+        type: String,
+        required: true
     },
-    create_date:{
-        type: Date,
-        default: Date.now
+    song_url:{
+        type: String,
+        required: true
     }
 });
 

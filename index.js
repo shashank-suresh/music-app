@@ -38,10 +38,10 @@ app.get('/del/:id', async (req, res) => {
 });
 
 // Search -- Took from Khushang
-app.get('/search', async (req, res) => {
+app.get('/songs/search', async function(req,res){
     s = req.query.title.toLowerCase();
-    const song = await Song.find({"title": {$regex: s, $options: 'i'}});
-    console.log(song);
+    const song = await Song.find({ "title" : {$regex: s, $options: 'i'}})
+    console.log(song)
 });
 
 app.listen(3000);
