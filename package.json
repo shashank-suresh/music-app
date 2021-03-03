@@ -1,0 +1,17 @@
+{
+  "name": "music",
+  "version": "1.0.0",
+  "description": "A music app for the Horizon - Web Dev workshop conducted by ISTE-VIT",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shashank Suresh",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.18",
+    "nodemon": "^2.0.7"
+  }
+}
