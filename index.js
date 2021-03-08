@@ -4,9 +4,13 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 const Song = require('./models/Songs');
+const dotenv = require('dotenv').config();
 
 // Connect to Mongoose
-mongoose.connect('mongodb+srv://admin:tlmOY62XDgawUyeC@cluster0.ssbnk.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',{
+mongoose.connect(process.env.DB_URI,{
+    dbName: process.env.DB_NAME,
+    user: process.env.DB_USER,
+    pass: process.env.DB_PASS,
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
@@ -44,5 +48,5 @@ app.get('/songs/search', async function(req,res){
     console.log(song)
 });
 
-app.listen(3000);
-console.log('Running on port 3000');
+const PORT = process.env.PORT || 3000;
+app.listen(PORT);
