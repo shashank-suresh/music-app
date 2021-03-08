@@ -37,7 +37,7 @@ app.get('/del/:id', async (req, res) => {
     res.redirect('/');
 });
 
-// Search -- Took from Khushang
+// Search
 app.get('/songs/search', async function(req,res){
     s = req.query.title.toLowerCase();
     const song = await Song.find({ "title" : {$regex: s, $options: 'i'}})
