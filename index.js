@@ -8,9 +8,6 @@ const dotenv = require('dotenv').config();
 
 // Connect to Mongoose
 mongoose.connect(process.env.DB_URI,{
-    dbName: process.env.DB_NAME,
-    user: process.env.DB_USER,
-    pass: process.env.DB_PASS,
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
@@ -45,7 +42,7 @@ app.get('/del/:id', async (req, res) => {
 app.get('/songs/search', async function(req,res){
     s = req.query.title.toLowerCase();
     const song = await Song.find({ "title" : {$regex: s, $options: 'i'}})
-    console.log(song)
+    console.log(song);
 });
 
 const PORT = process.env.PORT || 3000;
